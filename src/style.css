@@ -1,59 +1,59 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 200,
-  'GRAD' 0,
-  'opsz' 48
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 48;
 }
+:root {
+  --grey: #edede9;
+  --darkgrey: #d6ccc2;
+  --khaki: #f5ebe0;
+  --lightdarkgrey: #e3d5ca;
+  --beige: #d5bdaf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: monospace;
+}
+
+h2 {
+    font-size: 3rem;
+    padding: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.navbar {
+  height: 100vh;
+  width: 20%;
+  background-color: var(--khaki);
+}
+
+.items {
+  height: 100vh;
+  width: 80%;
+  background-color: var(--lightdarkgrey);
+  border: 5px double var(--lightdarkgrey);
+}
+
+.squares {
+  width: 100%;
+  height: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid var(--darkgrey);
+}
+
+.squares:hover {
+  background-color: var(--lightdarkgrey);
+  cursor: pointer;
+}
+

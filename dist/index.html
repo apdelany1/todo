@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo</title>
-    <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-<body>
-
-<script src="main.js"></script>
-</body>
+    <link rel="shortcut icon" href="src/style.css" />
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar" id="navs">
+        <div class="squares" id="square1">
+          <span class="material-symbols-outlined"> Home </span>
+          <h2>Home</h2>
+        </div>
+        <div class="squares" id="square2">
+          <span class="material-symbols-outlined"> filter_list </span>
+          <h2>Projects</h2>
+        </div>
+        <div class="squares" id="square3">
+          <span class="material-symbols-outlined"> done_outline </span>
+          <h2>Complete</h2>
+        </div>
+      </div>
+      <div class="items"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
