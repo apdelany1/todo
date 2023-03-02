@@ -14,6 +14,40 @@
   </head>
   <body>
     <div class="container">
+      <div class="newItem">
+        <span class="material-symbols-outlined"> add </span>
+      </div>
+      <div class="itemForm display">
+        <form action="#">
+          <fieldset>
+            <legend>Add A Task</legend>
+            <div class="collective">
+              <span class="material-symbols-outlined closeForm"> close </span>
+              <input type="text" placeholder="Task" id="taskInput" required />
+              <input
+                type="text"
+                placeholder="Description"
+                id="descriptionInput"
+                required
+              />
+              <input
+                type="date"
+                id="dateInput"
+                required
+              />
+              <select name="select" id="select">
+                <option value="" autofocus disabled>
+                  --Priority--
+                </option>
+                <option value="no">Low</option>
+                <option value="yes">Medium</option>
+                <option value="yes">High</option>
+              </select>
+              <button type="submit" id="button">Add</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
       <div class="navbar" id="navs">
         <div class="squares" id="square1">
           <span class="material-symbols-outlined"> Home </span>
@@ -28,7 +62,18 @@
           <h2>Complete</h2>
         </div>
       </div>
-      <div class="items"></div>
+      <div class="items">
+        <div class="listItem">
+          <div class="leftSide">
+            <h4>Clean Your Car</h4>
+            <p>Your car so dirty, you cant even see out the back window</p>
+          </div>
+          <div class="rightSide">
+            <h6>04/03/2023</h6>
+            <h5>Low</h5>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>

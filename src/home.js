@@ -1,4 +1,6 @@
 import "./style.css";
+import color from "./functions";
+import { toDoItem, personFactory } from "./objects";
 
 const clickBox = document.querySelector("#square1");
 const navs = document.querySelectorAll(".squares");
@@ -8,6 +10,7 @@ function home() {
     button.style.backgroundColor = "#f5ebe0";
   });
   clickBox.style.backgroundColor = "#e3d5ca";
+
 }
 
 clickBox.addEventListener("click", home);
