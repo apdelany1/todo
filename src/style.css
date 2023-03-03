@@ -41,20 +41,21 @@ h2 {
   width: 80%;
   background-color: var(--lightdarkgrey);
   border: 5px double var(--lightdarkgrey);
-  padding: 100px 20px;
+  padding: 100px 0px;
 }
 
 .listItem {
   width: 75%;
-  height: 120px;
+  height: 100px;
   margin: 0 auto;
-  padding: 0 70px;
+  padding: 0 50px;
   border-radius: 10px;
   background-color: var(--khaki);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .squares {
@@ -94,7 +95,7 @@ h2 {
   border-radius: 10px;
   background-color: var(--khaki);
   position: absolute;
-  bottom: 0px;
+  bottom: 20px;
   right: 20px;
   display: flex;
   align-items: center;
@@ -111,23 +112,23 @@ form span {
 
 input,
 select {
-    width: 80%;
-    margin: 10px 0 ;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: left;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    box-shadow: 4px 4px 9px var(--darkgrey);
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  box-shadow: 4px 4px 9px var(--darkgrey);
 }
 
 fieldset {
   width: 100%;
-  border: none; 
+  border: none;
 }
 
 button {
-  width: 300px; 
+  width: 300px;
   height: 60px;
   border-radius: 100px;
   background-color: var(--grey);
