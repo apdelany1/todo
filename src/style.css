@@ -39,7 +39,10 @@ h2 {
 .items {
   height: 100vh;
   width: 80%;
-  background-color: var(--lightdarkgrey);
+  background: radial-gradient(circle, #F5EBE0 10%, transparent 11%),radial-gradient(circle at bottom left, #F5EBE0 5%, transparent 6%),radial-gradient(circle at bottom right, #F5EBE0 5%, transparent 6%),radial-gradient(circle at top left, #F5EBE0 5%, transparent 6%),radial-gradient(circle at top right, #F5EBE0 5%, transparent 6%);
+  background-size: 6em 6em;
+  background-color: #E3D5CA;
+  opacity: 1;
   border: 5px double var(--lightdarkgrey);
   padding: 100px 0px;
 }
@@ -67,6 +70,7 @@ h2 {
   align-items: center;
   flex-direction: column;
   border: 1px solid var(--darkgrey);
+  text-decoration: underline double;
 }
 
 .squares:hover {
