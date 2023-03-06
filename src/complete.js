@@ -1,3 +1,4 @@
+import { loadComplete } from "./functions";
 import "./style.css";
 
 const clickBox = document.querySelector("#square3");
@@ -8,6 +9,8 @@ function complete() {
     button.style.backgroundColor = "#f5ebe0";
   });
   clickBox.style.backgroundColor = "#e3d5ca";
+
+  loadComplete();
 }
 
 clickBox.addEventListener("click", complete);

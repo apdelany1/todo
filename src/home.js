@@ -12,8 +12,7 @@ function home() {
   });
   clickBox.style.backgroundColor = "#e3d5ca";
 
-  loadTasks()
-
+  loadTasks();
 }
 
 clickBox.addEventListener("click", home);

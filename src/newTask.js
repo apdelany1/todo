@@ -1,5 +1,7 @@
 import { each } from "lodash";
 import "./style.css";
+import { toDoItem, tasks } from "./objects";
+import { loadTasks } from "./functions";
 
 const itemForm = document.querySelector(".itemForm");
 const mainForm = document.querySelector("form");
@@ -16,12 +18,27 @@ closeForm.addEventListener("click", () => {
 });
 
 const addTask = document.querySelector("#button");
-addTask.addEventListener("click", function(e) {
-    e.preventDefault();
-    console.log(mainForm[1].value);
-    console.log(mainForm[2].value);
-    console.log(mainForm[3].value);
-    console.log(mainForm[4].value);
-})
+addTask.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (
+    mainForm[1].value === "" ||
+    mainForm[2].value === "" ||
+    mainForm[3].value === ""
+  ) {
+    alert("Must Fill Out All Fields");
+  } else {
+    let newDo = toDoItem(
+      mainForm[1].value,
+      mainForm[2].value,
+      mainForm[3].value,
+      mainForm[4].value
+    );
+    console.log(newDo);
+    tasks.push(newDo);
+    loadTasks();
+    document.querySelector("form").reset();
+  }
+});
 
 export { itemForm, newItem, closeForm, addTask };

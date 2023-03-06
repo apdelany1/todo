@@ -48,7 +48,7 @@ h2 {
   width: 75%;
   height: 100px;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 30px;
   border-radius: 10px;
   background-color: var(--khaki);
   display: flex;
@@ -56,6 +56,7 @@ h2 {
   justify-content: space-between;
   font-size: 1.5rem;
   margin-bottom: 10px;
+  box-shadow: 2px 2px 2px;
 }
 
 .squares {
@@ -103,7 +104,7 @@ h2 {
   font-size: 1.5rem;
 }
 
-form span {
+.closeForm {
   position: absolute;
   right: 40px;
   bottom: 60px;
@@ -143,6 +144,37 @@ button {
   align-items: center;
 }
 
+.addProject {
+  position: absolute;
+  padding-top: 300px;
+  padding-left: 800px;
+  bottom: 0%;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  background-color: #e3d5cad0;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCollective {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.closeForm2 {
+  padding-left: 350px;
+  cursor: pointer;
+}
+
 .display {
   display: none;
 }
+
+.completedItems {
+  text-decoration: line-through;
+}
+
