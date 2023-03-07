@@ -16,7 +16,6 @@ function project() {
   itemForm.classList.add("display");
 
   loadProjects();
-
 }
 
 clickBox.addEventListener("click", project);

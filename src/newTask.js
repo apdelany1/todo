@@ -2,6 +2,7 @@ import { each } from "lodash";
 import "./style.css";
 import { toDoItem, tasks } from "./objects";
 import { loadTasks } from "./functions";
+import home from "./home";
 
 const itemForm = document.querySelector(".itemForm");
 const mainForm = document.querySelector("form");
@@ -34,9 +35,10 @@ addTask.addEventListener("click", function (e) {
       mainForm[3].value,
       mainForm[4].value
     );
-    console.log(newDo);
+
     tasks.push(newDo);
     loadTasks();
+    home();
     document.querySelector("form").reset();
   }
 });
