@@ -1,5 +1,4 @@
-import { tasks } from "./objects";
-import { complete } from "./objects";
+import { tasks, complete } from "./objects";
 import { projectObj, projects } from "./objects";
 
 function loadTasks() {
@@ -8,34 +7,51 @@ function loadTasks() {
 
   //task items being generated
   tasks.forEach((element) => {
-    let newDiv = document.createElement("div");
-    let rightDiv = document.createElement("div");
-    let leftDiv = document.createElement("div");
+    if (element.completed == false) {
+      let newDiv = document.createElement("div");
+      let rightDiv = document.createElement("div");
+      let leftDiv = document.createElement("div");
 
-    let header = document.createElement("h4");
-    header.innerText = element.title;
+      let header = document.createElement("h4");
+      header.innerText = element.title;
 
-    let description = document.createElement("p");
-    description.innerText = element.description;
+      let description = document.createElement("p");
+      description.innerText = element.description;
 
-    let date = document.createElement("h6");
-    date.innerText = element.dueDate;
+      let date = document.createElement("h6");
+      date.innerText = element.dueDate;
 
-    let priority = document.createElement("h5");
-    priority.innerText = element.priority;
+      let priority = document.createElement("h5");
+      priority.innerText = element.priority;
 
-    leftDiv.append(header);
-    leftDiv.append(description);
-    rightDiv.append(date);
-    rightDiv.append(priority);
+      let completed = document.createElement("span");
+      completed.innerText = "check";
+      completed.classList.add("material-symbols-outlined");
+      completed.classList.add("completed");
 
-    newDiv.append(leftDiv);
-    newDiv.append(rightDiv);
+      let trash = document.createElement("span");
+      trash.innerText = "delete";
+      trash.classList.add("material-symbols-outlined");
+      trash.classList.add("deleted");
 
-    newDiv.classList.add("listItem");
+      leftDiv.append(header);
+      leftDiv.append(description);
+      rightDiv.append(date);
+      rightDiv.append(priority);
+      rightDiv.append(trash);
+      rightDiv.append(completed);
 
-    items.append(newDiv);
+      newDiv.append(leftDiv);
+      newDiv.append(rightDiv);
+
+      newDiv.classList.add("listItem");
+
+      items.append(newDiv);
+    }
   });
+
+  completeTask();
+  deleteTask();
 }
 
 function loadProjects() {
@@ -48,29 +64,27 @@ function loadProjects() {
     let newDiv = document.createElement("div");
     let rightDiv = document.createElement("div");
     let leftDiv = document.createElement("div");
-  
+
     let header = document.createElement("h4");
     header.innerText = element.title;
-  
+
     let description = document.createElement("p");
     description.innerText = element.description;
-  
+
     let date = document.createElement("h6");
     date.innerText = element.dueDate;
-  
+
     leftDiv.append(header);
     leftDiv.append(description);
     rightDiv.append(date);
-  
+
     newDiv.append(leftDiv);
     newDiv.append(rightDiv);
-  
+
     newDiv.classList.add("listItem");
 
     items.append(newDiv);
   });
-
-
 }
 
 function loadComplete() {
@@ -180,6 +194,53 @@ function loadProjectForm() {
       form.innerHTML = "";
       form.classList.remove("addProject");
       loadProjects();
+    });
+  });
+}
+
+function completeTask() {
+  let deleteBtn = document.querySelectorAll(".completed");
+
+  deleteBtn.forEach((userItem) => {
+    userItem.addEventListener("click", () => {
+      let task = userItem.parentNode.parentNode.firstChild.firstChild.innerText;
+
+      tasks.forEach((element) => {
+        if (element.title == task) {
+          element.completed = true;
+          complete.push(element);
+          loadTasks();
+          setTimeout(() => {
+            alert("Task Complete!");
+          }, 100);
+        }
+      });
+    });
+  });
+}
+
+function deleteTask() {
+  let deleteBtn = document.querySelectorAll(".deleted");
+
+  deleteBtn.forEach((userItem) => {
+    userItem.addEventListener("click", () => {
+      let task = userItem.parentNode.parentNode.firstChild.firstChild.innerText;
+
+      tasks.forEach((element) => {
+        if (element.title == task) {
+
+          let filtered = tasks.filter(function (obj) {
+            return obj.title !== task;
+          });
+          console.log(tasks)
+          tasks = filtered;
+          console.log(tasks)
+          loadTasks();
+          setTimeout(() => {
+            alert("Task Deleted!");
+          }, 100);
+        }
+      });
     });
   });
 }

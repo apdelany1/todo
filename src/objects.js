@@ -2,8 +2,8 @@ import { each } from "lodash";
 import home from "./home";
 import "./style.css";
 
-const toDoItem = (title, description, dueDate, priority) => {
-  return { title, description, dueDate, priority };
+const toDoItem = (title, description, dueDate, priority, completed) => {
+  return { title, description, dueDate, priority, completed:false };
 };
 
 const projectObj = (title, description, dueDate) => {
